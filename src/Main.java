@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Biblioteca biblio = new Biblioteca("Alejandría");
+        Biblioteca biblio = new Biblioteca("Alejandria");
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Bienvenido a la biblioteca de Alejandría");
+        System.out.println("Bienvenido a la biblioteca de Alejandria");
         System.out.println("Introduzca su nombre");
         String username = sc.nextLine();
 
@@ -19,8 +19,8 @@ public class Main {
         boolean salir = false;
 
         while (!salir) {
-            System.out.println("Seleccione una opción");
-            System.out.println("1. Ver catálogo");
+            System.out.println("Seleccione una opcion");
+            System.out.println("1. Ver catalogo");
             System.out.println("2. Tomar prestado un libro concreto");
             System.out.println("3. Tomar prestado un libro aleatorio");
             System.out.println("4. Ver libros que tiene prestados");
@@ -37,21 +37,23 @@ public class Main {
                     System.out.println("Seleccione uno de los libros");
                     biblio.showCatalog();
                     int posicion = sc.nextInt();
+                    sc.nextLine();
                     usuario.obtenerLibro(posicion, biblio);
                     break;
                 case "3":
                     System.out.println("Obteniendo libro aleatorio");
                     String titulo = usuario.obtenerLibroAleatorio(biblio);
 
-                    System.out.println("Ha obtenido el título: " + titulo);
+                    System.out.println("Ha obtenido el titulo: " + titulo);
                     break;
                 case "4":
                     System.out.println(usuario);
                     break;
                 case"5":
-                    System.out.println("Introduzca el título del libro que quiere devolver");
+                    System.out.println("Introduzca el titulo del libro que quiere devolver");
                     System.out.println(usuario);
                     int libroParaDevolver = sc.nextInt();
+                    sc.nextLine();
                     String tituloLibro = usuario.obtenerTituloLibro(libroParaDevolver);
                     usuario.devolverLibro(tituloLibro, biblio);
                     break;
